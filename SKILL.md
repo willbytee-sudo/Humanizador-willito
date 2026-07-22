@@ -1,5 +1,5 @@
 ---
-name: humanizer-combo
+name: humanizador-willito
 description: >-
   Reescribe un texto académico en español para que un detector de IA por perplejidad
   (Grammarly-es y similares) lo marque bajo, SIN tocar cifras, fechas, nombres ni citas.
