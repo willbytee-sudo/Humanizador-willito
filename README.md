@@ -84,7 +84,22 @@ Esto no fue una sesión. Fue una investigación de una semana, con cuaderno de l
 
 **Total: más de 400 mediciones documentadas**, 175 archivos de datos, 44 textos de sonda y un cuaderno de laboratorio de **2.216 líneas** donde está registrado cada callejón sin salida.
 
-*(Los tokens solo están contabilizados en la fase 9; las anteriores ocurrieron en sesiones cuyo consumo no quedó registrado.)*
+### El costo real
+
+Cifras recuperadas de los registros de uso de las **17 sesiones de trabajo** (16–22 de julio):
+
+| | |
+|---|---|
+| Sesiones de trabajo | **17** |
+| Mensajes con uso registrado | **15.515** |
+| **Tokens generados** | **16,8 millones** |
+| Contexto escrito en caché | 178,7 millones |
+| Contexto releído | 4.490 millones |
+| **Total procesado** | **4,69 mil millones de tokens** |
+
+Los 16,8 millones de tokens generados equivalen a unos **12,6 millones de palabras** — alrededor de **140 libros** de extensión media. Escritos, medidos y en su enorme mayoría **descartados**, porque casi todo lo que se probó no funcionó.
+
+Ese es el precio real de las **1.400 palabras** que quedaron en `SKILL.md`.
 
 ### Los métodos
 
