@@ -9,7 +9,7 @@ UNICO CAMBIO desde la version validada: el campo 'name:' del frontmatter
 instruccion de la receta. El cuerpo de la skill es identico al validado.
 
 VALIDACION EN MODELOS (modo anonimo, ancla positiva por tanda, one-pass, a ciegas):
-  26 ceros exactos sobre 5 dominios y 4 familias de modelos.
+  21 de 23 pruebas a ciegas en 0% exacto, sobre 5 dominios, 4 modelos de 3 empresas (Anthropic, Google, DeepSeek).
     DeepSeek              4/4
     Gemini 3.1 Pro        3/3
     Claude Sonnet+Haiku  14/16

@@ -58,7 +58,7 @@ Probado **a ciegas** (el modelo solo recibe la skill y el texto, sin ayuda extra
 | Google | Gemini 3.1 Pro | **3 / 3** en 0% |
 | Anthropic | Claude Sonnet · Claude Haiku | **14 / 16** en 0% |
 
-**26 mediciones en 0% exacto**, sobre **5 dominios** distintos (derecho, salud, economía, educación, seguridad industrial). Los 2 fallos fueron de Claude en un mismo dominio.
+**21 de 23 pruebas a ciegas en 0% exacto** (4 modelos, 3 empresas), sobre **5 dominios** distintos (derecho, salud, economía, educación, seguridad industrial). Los 2 fallos fueron de Claude en un mismo dominio.
 
 Una de las pruebas se hizo sobre un texto **escrito y medido el mismo día**, ausente de la skill y nunca visto por ningún modelo: baseline 100% IA → **0%** de una pasada. No hay memorización posible.
 
