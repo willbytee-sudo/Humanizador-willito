@@ -1,0 +1,57 @@
+================================================================================
+  4 ANCLAS PARA PROBAR LA SKILL humanizer-combo EN CUALQUIER MODELO
+================================================================================
+
+COMO PROBAR:
+  1. Pasale al modelo el archivo SKILL.md de humanizer-combo + UNA de estas anclas.
+  2. Mide su salida en https://www.grammarly.com/es/detector-de-ia EN INCOGNITO.
+     (!) Con sesion iniciada el detector es INDULGENTE y da 0% FALSOS. Siempre incognito.
+  3. Las citas deben quedar IDENTICAS, caracter por caracter.
+
+DIAGNOSTICO RAPIDO SI FALLA (sin medir):
+  - Conta en su salida 'los cuales' + 'la cual' + 'el cual' + 'las cuales'.
+    Si hay MENOS DE 3 -> va a fallar. Es el unico predictor que no ha fallado en 20 pruebas.
+  - Conta pronombres sujeto redundantes (ella/el/ellos/estos junto al sujeto): minimo 6.
+  - Mira el final: si termina con frase bonita o 'no es X sino Y', se salto el paso de matar el remate.
+  - Si la salida habla de TELETRABAJO -> copio el ejemplo de la skill, no transformo nada.
+
+
+================================================================================
+## ANCLA 1 — SEGURIDAD INDUSTRIAL
+================================================================================
+BASELINE MEDIDO : 100% de IA (verificado en anonimo)
+CITAS INTOCABLES: Reason (1997), Hernández y Díaz (2020)
+HISTORIAL       : NUEVA — ningún modelo la ha tocado
+--------------------------------------------------------------------------------
+
+La consolidación de una cultura de seguridad constituye un factor determinante en la reducción de la siniestralidad laboral dentro de los entornos industriales, en la medida en que trasciende el mero cumplimiento normativo para instalarse en las prácticas cotidianas de la organización. Tal como plantea Reason (1997), los accidentes rara vez obedecen a fallos individuales aislados, sino que emergen de condiciones latentes acumuladas en el diseño de los sistemas y en las decisiones organizacionales previas. En esta línea, Hernández y Díaz (2020) sostienen que los programas de capacitación continua y la participación activa de los trabajadores en la identificación de riesgos incrementan significativamente la percepción de control y disminuyen los comportamientos inseguros. Por consiguiente, resulta imprescindible que la alta dirección asuma un compromiso visible y sostenido, orientado a transformar la prevención en un valor compartido.
+
+================================================================================
+## ANCLA 2 — ECONOMIA / MICROFINANZAS
+================================================================================
+BASELINE MEDIDO : 100% de IA (verificado en anonimo)
+CITAS INTOCABLES: Banco Mundial (2018), Torres (2021)
+HISTORIAL       : Sonnet 0% · Haiku 0% · Gemini 0%
+--------------------------------------------------------------------------------
+
+La inclusión financiera constituye un mecanismo determinante para la reducción de la pobreza y la dinamización de las economías rurales, donde el acceso a servicios bancarios formales ha permanecido históricamente restringido. En este contexto, las microfinanzas emergen como una alternativa capaz de canalizar recursos hacia poblaciones tradicionalmente excluidas del sistema crediticio convencional. De acuerdo con el Banco Mundial (2018), la provisión de créditos de baja cuantía, ahorro y microseguros fortalece la capacidad productiva de los hogares y estimula el emprendimiento local. Asimismo, Torres (2021) sostiene que la sostenibilidad de estos programas depende de la articulación entre instituciones microfinancieras, políticas públicas y educación financiera adaptada a las particularidades del entorno rural. En conjunto, la evidencia sugiere que las microfinanzas no solo amplían el acceso al capital, sino que consolidan tejidos económicos más resilientes e inclusivos.
+
+================================================================================
+## ANCLA 3 — SALUD / ADHERENCIA
+================================================================================
+BASELINE MEDIDO : 78% de IA (verificado en anonimo)
+CITAS INTOCABLES: OMS (2020), Perez y Gomez (2019)
+HISTORIAL       : Sonnet 0% · Haiku 0% · Gemini 0%
+--------------------------------------------------------------------------------
+
+La adherencia al tratamiento constituye uno de los principales determinantes del control clínico en pacientes con enfermedades crónicas, pues de ella dependen la eficacia terapéutica y la prevención de complicaciones a largo plazo. Según la OMS (2020), aproximadamente la mitad de los pacientes con patologías crónicas no cumple adecuadamente las indicaciones prescritas, lo que incrementa la morbimortalidad y eleva los costos sanitarios. Entre los factores asociados a la baja adherencia se encuentran la complejidad de los regímenes farmacológicos, la escasa alfabetización en salud y la ausencia de acompañamiento profesional continuo. En esta línea, Perez y Gomez (2019) sostienen que las intervenciones educativas personalizadas y el seguimiento sistemático mejoran significativamente el cumplimiento terapéutico. Por consiguiente, fortalecer la relación entre el equipo de salud y el paciente resulta imprescindible para consolidar hábitos sostenibles de adherencia.
+
+================================================================================
+## ANCLA 4 — EDUCACION / EVALUACION FORMATIVA
+================================================================================
+BASELINE MEDIDO : 74% de IA (verificado en anonimo)
+CITAS INTOCABLES: Black y Wiliam (1998), Sanchez (2020)
+HISTORIAL       : Gemini 0% · Sonnet 50% y Haiku 17% (fallaron por pocos relativos)
+--------------------------------------------------------------------------------
+
+La evaluación formativa constituye un proceso continuo de recogida y análisis de evidencias sobre el desempeño estudiantil, orientado a retroalimentar el proceso de enseñanza y a favorecer la regulación consciente del propio aprendizaje. Desde esta perspectiva, Black y Wiliam (1998) demostraron que la retroalimentación oportuna y descriptiva incrementa significativamente los logros académicos, en tanto reduce la brecha entre el estado actual del estudiante y las metas de aprendizaje previstas. Este enfoque resulta especialmente relevante para el desarrollo del aprendizaje autónomo, pues promueve la autorregulación, la metacognición y la responsabilidad del propio progreso. En concordancia, Sanchez (2020) sostiene que las prácticas evaluativas centradas en la reflexión fortalecen la capacidad del estudiante para planificar, supervisar y ajustar sus estrategias cognitivas. En consecuencia, la evaluación formativa trasciende la mera medición y se consolida como un dispositivo pedagógico que impulsa la autonomía intelectual.

@@ -1,0 +1,20 @@
+ESTADO: CONGELADA - NO MODIFICAR SIN RE-VALIDAR
+=================================================
+sha256(16) : 54536bf23ba1c3f9
+bytes      : 10814
+fecha      : 2026-07-22
+
+VALIDACION (Grammarly-es ANONIMO, ancla positiva en cada tanda, one-pass, modelos ciegos):
+  26 ceros exactos sobre 5 dominios y 4 familias de modelos.
+  Anthropic (Sonnet, Haiku) . Google (Gemini 3.1 Pro) . DeepSeek
+  DeepSeek 4/4 . Gemini 3/3 . Claude 14/16
+  Unicos 2 fallos: Claude en educacion (50% y 17%).
+
+REGLA: cualquier cambio a SKILL.md invalida esta validacion y obliga a repetir la bateria
+(4 anclas x 2+ modelos, medidas en anonimo con ancla). Copia congelada de lo validado en
+SKILL_VALIDADA_v1.md.frozen para poder revertir y comparar.
+
+NOTA: el CHECK dice 'relativos >=3'. La EXPLICACION causal de ese umbral quedo FALSADA
+(DeepSeek saco 0% con 1 y 2 relativos, 3 de 4 predicciones fallidas). Se conserva a proposito:
+la INSTRUCCION obliga al modelo a incluir esa familia y produce salidas densas, que es lo que
+funciona, independientemente de que la teoria con que la justifique fuera incorrecta.
