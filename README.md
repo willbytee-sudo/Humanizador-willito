@@ -46,7 +46,7 @@ Todas las mediciones en **modo anónimo/incógnito**, con **ancla positiva** (un
 | [ZeroGPT](https://www.zerogpt.com/es/) | 100% IA | **0%** — *"Su Texto está escrito por un humano"* |
 | [humanizeai.pro](https://www.humanizeai.pro/es) | 100% *"Parece generado por IA"* | **100% Humano** |
 | [QuillBot](https://quillbot.com/es/detector-de-ia) | 100% IA | **0% IA — 100% humano** |
-| [Originality.ai](https://originality.ai/) | — | **95–100% Confident That's Original** *(95–100% humano)* |
+| [Originality.ai](https://originality.ai/) | 100% IA | **95–100% Confident That's Original** *(95–100% humano)* |
 
 ### Modelos que ejecutan la skill
 
@@ -61,6 +61,42 @@ Probado **a ciegas** (el modelo solo recibe la skill y el texto, sin ayuda extra
 **26 mediciones en 0% exacto**, sobre **5 dominios** distintos (derecho, salud, economía, educación, seguridad industrial). Los 2 fallos fueron de Claude en un mismo dominio.
 
 Una de las pruebas se hizo sobre un texto **escrito y medido el mismo día**, ausente de la skill y nunca visto por ningún modelo: baseline 100% IA → **0%** de una pasada. No hay memorización posible.
+
+## Cómo se construyó
+
+No salió de una idea feliz. Salió de **matar hipótesis, una tras otra, hasta que quedó la que aguantó**.
+
+### La campaña en números
+
+| | |
+|---|---|
+| Escaneos en detectores | **96** — cada uno con su ancla de control |
+| Tandas de medición | **31**, todas ancladas |
+| Agentes de IA coordinados | **83** (56 en workflows paralelos + 27 individuales) |
+| Tokens consumidos | **5,12 millones** *(solo la fase final)* |
+| Hipótesis formuladas y **falsadas** | **10** |
+| Hipótesis que sobrevivió | **1** |
+
+### Los métodos
+
+**No usamos estadística inferencial.** No hay regresiones, ni p-valores, ni intervalos de confianza — y sería deshonesto pretenderlo. Lo que usamos fue **método experimental clásico**, que para este problema resultó más filoso:
+
+- **Pares mínimos.** Dos versiones del mismo texto que difieren en **una sola variable**. Es lo que aisló la palanca real: *"solo traducción-ese" = 62%* vs *"traducción-ese + densidad" = 0%*, mismo contenido.
+- **Controles positivos obligatorios.** Cada tanda incluyó un texto de IA cruda que **debía** dar alto. Si el ancla no se comportaba, la tanda entera se descartaba. Los 96 escaneos están anclados.
+- **Pruebas a ciegas.** Los modelos recibían la skill y el texto, sin contexto, sin pistas, sin saber qué se esperaba de ellos.
+- **Validación cruzada entre familias.** No basta que funcione en el modelo que la escribió. Se probó en Anthropic, Google y DeepSeek.
+- **Pre-registro de predicciones.** Escribir qué se espera **antes** de medir. Fue lo que mató la última hipótesis: predijimos 4 resultados y fallamos 3.
+- **Conteo lingüístico.** Cuantificación de marcadores por familia gramatical (pronombre sujeto redundante, relativos, muletillas, perífrasis) y su densidad **dentro** de cada oración.
+
+### Lo que se descubrió por el camino
+
+**El detector mentía según la sesión.** Con la cuenta iniciada, Grammarly era notablemente más indulgente y devolvía **0% falsos**. Ese hallazgo invalidó una campaña entera de mediciones previas y obligó a rehacerlas en anónimo. Desde entonces, ninguna medición vale sin su ancla.
+
+**La receta correcta era casi lo opuesto a lo intuitivo.** Durante buena parte del trabajo se probó lo que "suena" a humanizar: frases cortas, tono hablado, imitar textos humanos reales, encarnar a un estudiante cansado. **Todo eso falló** — algunos incluso empeoraron el score. Lo que funciona es exactamente lo contrario: **oraciones largas, cargadas por dentro de torpeza estructural**.
+
+**Y lo más incómodo:** la explicación de *por qué* funciona el método también murió. Se identificó un umbral que predecía perfectamente 24 observaciones pasadas — y al usarlo para predecir de verdad, **falló 3 de 4 veces**. El método sigue funcionando; la teoría con que lo explicábamos, no.
+
+> Esa distinción es el corazón de este proyecto: **una instrucción puede funcionar aunque la teoría que la justifica sea falsa.** La skill se dejó congelada, con hash verificable, precisamente para no romper lo que funciona intentando arreglar una explicación equivocada.
 
 ## Cómo se usa
 
