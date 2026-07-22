@@ -66,16 +66,25 @@ Una de las pruebas se hizo sobre un texto **escrito y medido el mismo día**, au
 
 No salió de una idea feliz. Salió de **matar hipótesis, una tras otra, hasta que quedó la que aguantó**.
 
-### La campaña en números
+### Siete días, nueve fases
 
-| | |
-|---|---|
-| Escaneos en detectores | **96** — cada uno con su ancla de control |
-| Tandas de medición | **31**, todas ancladas |
-| Agentes de IA coordinados | **83** (56 en workflows paralelos + 27 individuales) |
-| Tokens consumidos | **5,12 millones** *(solo la fase final)* |
-| Hipótesis formuladas y **falsadas** | **10** |
-| Hipótesis que sobrevivió | **1** |
+Esto no fue una sesión. Fue una investigación de una semana, con cuaderno de laboratorio, hipótesis pre-registradas y cientos de mediciones. Cada fase **mató** algo.
+
+| # | Fase | Escala | Qué costó |
+|---|---|---|---|
+| 1 | **Primer experimento** contra un detector comercial | 16 mediciones, 14 sondas | Murieron **6 mecanismos** (perplejidad, fluidez, rugosidad, largo de frase, palabras función, densidad de datos). Descubrimiento incómodo: **las explicaciones del detector se inventan los valores** del texto que tienen delante. |
+| 2 | **Modelado con acceso autónomo** al navegador | ~56 mediciones | Cayeron **8 modelos explicativos** más. Apareció el primer par mínimo brutal: un párrafo enciclopédico al 99% → **0% cambiando una coma por un punto**. |
+| 3 | **Dos clases de detector** | comparativas en 3 sitios | Se descubrió que los detectores **de forma** y los **de perplejidad** son bestias distintas: el truco que vence a uno **sube** el score del otro. |
+| 4 | **Prueba de frontera** | 25 reformulaciones del mismo texto | Ninguna bajó de 39%. Declaré que había una **frontera infranqueable**. |
+| 5 | **La frontera era falsa** | par mínimo decisivo | **El usuario la refutó con un texto suyo: 0%.** La variable que yo nunca había movido era la *corrección gramatical* — porque un modelo que escribe bien no descubre solo que escribir bien es el problema. |
+| 6 | **Los dos Grammarly** | **72 mediciones** (36 textos × 2 endpoints) | Acuerdo entre endpoints: **58%**, correlación **r = 0,21**. Conclusión: *"pasar el detector"* no es propiedad del texto, sino del par **(texto, detector)**. |
+| 7 | **Campaña de frontera** | ~67 escaneos | Se aisló la variable real: **densidad intra-oración**. Espolvorear una marca por oración = inerte. Apilarlas dentro = 0%. |
+| 8 | **La contaminación** | re-verificación completa | Se descubrió que **con la sesión iniciada el detector regala 0% falsos**. Invalidó mediciones previas y obligó al protocolo de anclas. |
+| 9 | **Validación final** *(este repo)* | **96 escaneos · 83 agentes · 5,12 M tokens** | **10 hipótesis falsadas**, incluida mi propia explicación del método. Sobrevivió **1**. |
+
+**Total: más de 400 mediciones documentadas**, 175 archivos de datos, 44 textos de sonda y un cuaderno de laboratorio de **2.216 líneas** donde está registrado cada callejón sin salida.
+
+*(Los tokens solo están contabilizados en la fase 9; las anteriores ocurrieron en sesiones cuyo consumo no quedó registrado.)*
 
 ### Los métodos
 
@@ -97,6 +106,25 @@ No salió de una idea feliz. Salió de **matar hipótesis, una tras otra, hasta 
 **Y lo más incómodo:** la explicación de *por qué* funciona el método también murió. Se identificó un umbral que predecía perfectamente 24 observaciones pasadas — y al usarlo para predecir de verdad, **falló 3 de 4 veces**. El método sigue funcionando; la teoría con que lo explicábamos, no.
 
 > Esa distinción es el corazón de este proyecto: **una instrucción puede funcionar aunque la teoría que la justifica sea falsa.** La skill se dejó congelada, con hash verificable, precisamente para no romper lo que funciona intentando arreglar una explicación equivocada.
+
+### El cementerio de hipótesis
+
+Las **10** que murieron solo en la fase final. Cada una parecía razonable, cada una se midió, cada una se cayó:
+
+| Hipótesis | Cómo murió |
+|---|---|
+| Un documento de **reglas** transfiere a otros modelos | 75% y 71% |
+| Encapsular mi **proceso mental** transfiere | disperso, 25–100% |
+| Una **segunda pasada** de auto-auditoría lo resuelve | funcionó en 1 texto, falló en 3 |
+| Darle **ejemplos humanos reales** (few-shot) lo rescata | **empeoró** — de 63% subió a 100% |
+| Transferir el **discriminador** + autopuntuación | inconsistente |
+| **Encarnar la persona** en vez de aplicar reglas | empeoró |
+| El contenido **abstracto** resiste todo, piso 24% | cayó a **0%** con la receta correcta |
+| El **modelo tonto gana** porque escribe peor | artefacto: con la receta buena ganan todos |
+| **Más instrucciones empeoran** el resultado | eran instrucciones *equivocadas*, no exceso |
+| El umbral **"relativos ≥ 3"** predice el fallo | predijo 4, **falló 3** |
+
+**La lección que más caro costó:** durante buena parte del trabajo reemplacé una receta ya validada por teorías propias — llegué a **prohibir explícitamente la palanca más potente** porque no encajaba con mi explicación. Veintiún mediciones después, una sola pregunta del usuario —*"¿y no probaste el método que ya funcionaba?"*— destapó el error. La receta correcta produjo 0% al primer intento en el texto que había resistido todo lo demás.
 
 ## Cómo se usa
 
