@@ -8,18 +8,19 @@ UNICO CAMBIO desde la version validada: el campo 'name:' del frontmatter
 (humanizer-combo -> humanizador-willito). Es METADATA, no altera ninguna
 instruccion de la receta. El cuerpo de la skill es identico al validado.
 
-VALIDACION (modo anonimo, ancla positiva en cada tanda, one-pass, modelos ciegos):
+VALIDACION EN MODELOS (modo anonimo, ancla positiva por tanda, one-pass, a ciegas):
   26 ceros exactos sobre 5 dominios y 4 familias de modelos.
-    DeepSeek        4/4
-    Gemini 3.1 Pro  3/3
-    Claude Sonnet + Haiku  14/16
+    DeepSeek              4/4
+    Gemini 3.1 Pro        3/3
+    Claude Sonnet+Haiku  14/16
   Unicos 2 fallos: Claude en el dominio educacion (50% y 17%).
 
-DETECTORES:
-  Grammarly-es    control 74-100% IA  ->  0%
+VALIDACION EN DETECTORES:
+  Grammarly-es    control 74-100% IA  ->  0% IA
   ZeroGPT         control 100% IA     ->  0% ("escrito por un humano")
   humanizeai.pro  control 100% IA     ->  100% Humano
-  QuillBot        validado por el autor (sin captura del porcentaje)
+  QuillBot        control 100% IA     ->  0% IA / 100% humano
+  Originality.ai                      ->  95-100% Confident Thats Original
 
 REGLA: cualquier cambio al CUERPO de SKILL.md invalida esta validacion y obliga a
 repetir la bateria completa (4 anclas x 2+ modelos, medidas en anonimo con ancla).

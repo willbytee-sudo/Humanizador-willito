@@ -45,9 +45,8 @@ Todas las mediciones en **modo anónimo/incógnito**, con **ancla positiva** (un
 | [Grammarly-es](https://www.grammarly.com/es/) | 74–100% IA | **0% IA** |
 | [ZeroGPT](https://www.zerogpt.com/es/) | 100% IA | **0%** — *"Su Texto está escrito por un humano"* |
 | [humanizeai.pro](https://www.humanizeai.pro/es) | 100% *"Parece generado por IA"* | **100% Humano** |
-| [QuillBot](https://quillbot.com/es/detector-de-ia) | — | ✅ **validado** *(medición del autor)* |
-
-*En QuillBot la verificación la hizo el autor por su cuenta: el sitio no cargaba en nuestro entorno automatizado al momento de las pruebas, así que no tenemos captura del porcentaje exacto.*
+| [QuillBot](https://quillbot.com/es/detector-de-ia) | 100% IA | **0% IA — 100% humano** |
+| [Originality.ai](https://originality.ai/) | — | **95–100% Confident That's Original** *(95–100% humano)* |
 
 ### Modelos que ejecutan la skill
 
